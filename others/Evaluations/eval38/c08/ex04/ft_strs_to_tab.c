@@ -1,0 +1,51 @@
+#include "ft_stock_str.h"
+#include <stdlib.h>
+
+int	ft_str_length(char *str)
+{
+	int	index;
+
+	index = 0;
+	while (str[index])
+		index++;
+	return (index);
+}
+
+char	*str_dup(char *src)
+{
+	int		i;
+	char	*dest;
+
+	i = 0;
+	dest = (char *) malloc(ft_str_length(src) * sizeof(char) + 1);
+	if (!dest)
+		return (0);
+	while (src[i])
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+struct s_stock_str	*ft_strs_to_tab(int ac, char **av)
+{
+	int					index;
+	struct s_stock_str	*array;
+
+	ac = ac + 0;
+	array = malloc((ac + 1) * sizeof(struct s_stock_str));
+	if (!array)
+		return (0);
+	index = 0;
+	while (index < ac)
+	{
+		array[index].size = ft_str_length(av[index]);
+		array[index].str = av[index];
+		array[index].copy = ft_strdup(av[index]);
+		index++;
+	}
+	array[index] = (struct s_stock_str){0, 0, 0};
+	return (array);
+}

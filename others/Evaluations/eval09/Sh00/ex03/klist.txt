@@ -1,0 +1,5 @@
+Credentials cache: API:89BDA145-84ED-46BD-8995-FAEF81CB4A46
+        Principal: wblotz-c@42LISBOA.COM
+
+  Issued                Expires               Principal
+Sep  8 14:52:41 2021  Sep  9 00:52:33 2021  krbtgt/42LISBOA.COM@42LISBOA.COM
